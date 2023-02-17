@@ -1,0 +1,12 @@
+CREATE TABLE Dapartment(
+DapartmentId INT IDENTITY (1,1)NOT NULL,
+Name VARCHAR(50) NOT NULL
+)
+
+
+CREATE TABLE Employee(
+EmployeeId int IDENTITY(1,1) NOT NULL,
+Name VARCHAR(50)NOT NULL,
+Adderss VARCHAR(100)NOT NULL,
+DapartmentId int NOT NULL
+)
