@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/all.css" rel="stylesheet" />
+    <link href="~/Content/Summernote/summernote-bs5.min.css" rel="stylesheet" />
+
+
+    <style>
+
+        .div-item {
+            border: 3px solid black;
+            margin: 2px;
+            padding: 2px;
+            background-color:burlywood;
+            color: white;
+            display:flow-root;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+        </ul>
+    </div>
+
+
+
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-2">
+                <p style="background-color:antiquewhite">
+                    <a class="div-item" href="/Dapartment/Index">Dapartment</a>
+                    <a class="div-item" href="/Employee/List">Employee</a>
+                </p>
+            </div> 
+            <div class="col-md-10">
+                @RenderBody()
+            </div>
+
+        </div>
+   
+        <hr/>
+       
+    </div>
+ 
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Content/Summernote/summernote-bs5.min.js"></script>
+
+</body>
+</html>

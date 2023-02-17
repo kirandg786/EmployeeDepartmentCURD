@@ -1,0 +1,40 @@
+﻿@model List<WebApplication2.Models.Dapartment>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Dapartment List</h2>
+    </div>
+    <div class="col-md-6 text-end">
+        <a href="/Dapartment/Add" class="btn btn-outline-success"> Add New </a>
+    </div>
+</div>
+
+<table class="table table-bordered">
+    <tr style="background-color:darkblue; color:white">
+        <th>Sr.N</th>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+    @{
+        int i = 0;
+    }
+    @foreach (var app in Model)
+    {
+
+        i = i + 1;
+        <tr>
+            <td>@i</td>
+            <td>@app.Name</td>
+
+            <td>
+                <a href="/Dapartment/Edit?Id=@app.DapartmentId"><i class="fa fa-edit"></i></a>
+                <a href="/Dapartment/Remove?dn=@app.DapartmentId" onclick="return confirm('Are yor sure you to delete this Recorc?');"><i class="fa fa-trash" style="color:red"></i></a>
+
+            </td>
+        </tr>
+        }
+    </table>
+

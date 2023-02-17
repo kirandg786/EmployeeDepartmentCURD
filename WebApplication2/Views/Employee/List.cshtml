@@ -1,0 +1,44 @@
+﻿@model List<WebApplication2.VM.EmployeeVM>
+@{
+    ViewBag.Title = "List";
+}
+<div class="row">
+    <div class="col-md-6">
+        <h2>Employee List</h2>
+    </div>
+    <div class="col-md-6 text-end">
+        <a href="/Employee/Add" class="btn btn-outline-success"> Add New </a>
+    </div>
+</div>
+
+<table class="table table-bordered">
+    <tr style="background-color:darkblue;color:white">
+        <th>Sr.N</th>
+        <th>Name</th>
+        <th>Adderss</th>
+        <th>Dapartment Name</th>
+        <th>Actions</th>
+    </tr>
+    @{
+        int i = 0;
+    }
+    @foreach (var ap in Model)
+    {
+
+        i = i + 1;
+        <tr>
+            <td>@i</td>
+            <td>@ap.Name</td>
+            <td>@ap.Adderss</td>
+            <td>@ap.DapartmentName</td>
+
+
+            <td>
+                <a href="/Employee/Edit?Id=@ap.EmployeeId"><i class="fa fa-edit"></i></a>
+                <a href="/Employee/Remove?Id=@ap.EmployeeId" onclick="return confirm('Are yor sure you to delete this Recorc?');"><i class="fa fa-trash" style="color:red"></i></a>
+            </td>
+        </tr>
+    }
+</table>
+
+
